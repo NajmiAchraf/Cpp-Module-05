@@ -4,10 +4,6 @@ std::string	Bureaucrat::getName() const {
 	return this->name;
 }
 
-void Bureaucrat::setName(std::string name) {
-	this->name = name;
-}
-
 int Bureaucrat::getGrade() const {
 	return this->grade;
 }
@@ -17,30 +13,25 @@ void Bureaucrat::setGrade(int grade) {
 	this->grade = grade;
 }
 
-Bureaucrat::Bureaucrat() {
+Bureaucrat::Bureaucrat() : name("default"), grade(150) {
 	std::cout << "Bureaucrat default constructor" << std::endl;
-	this->name = "default";
-	this->grade = 150;
 }
 
-Bureaucrat::Bureaucrat(std::string name, int grade){
+Bureaucrat::Bureaucrat(std::string name, int grade) : name(name) {
 	std::cout << "Bureaucrat parameterized constructor" << std::endl;
 	this->checkGrade(grade);
-	this->name = name;
 	this->grade = grade;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &bureaucrat) {
+Bureaucrat::Bureaucrat(const Bureaucrat &bureaucrat) : name(bureaucrat.getName()) {
 	std::cout << "Bureaucrat copy constructor" << std::endl;
 	*this = bureaucrat;
 }
 
 Bureaucrat &Bureaucrat::operator = (const Bureaucrat &bureaucrat) {
 	std::cout << "Bureaucrat copy assignment operator" << std::endl;
-	if (this != &bureaucrat) {
-		this->name = bureaucrat.getName();
+	if (this != &bureaucrat)
 		this->grade = bureaucrat.getGrade();
-	}
 	return *this;
 }
 

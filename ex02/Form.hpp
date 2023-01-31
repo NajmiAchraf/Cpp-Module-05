@@ -5,7 +5,7 @@
 
 class Form {
 
-private:
+protected:
 
 	const std::string	Name;
 	bool				Signed;
@@ -25,9 +25,9 @@ public:
 	Form(std::string name, int gradeToSign, int gradeToExecute);
 	Form(const Form &form);
 	Form &operator = (const Form &form);
-	~Form();
+	virtual ~Form();
 
-	void	beSigned(const Bureaucrat &bureaucrat);
+	virtual void	beSigned(const Bureaucrat &bureaucrat) = 0;
 
 	class GradeTooHighException : public std::exception {
 

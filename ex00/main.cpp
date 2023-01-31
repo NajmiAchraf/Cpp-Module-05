@@ -1,10 +1,9 @@
 #include "Bureaucrat.hpp"
 
 int main () {
-	Bureaucrat	bureaucrat;
 
 	try {
-		bureaucrat.setName("John");
+		Bureaucrat	bureaucrat("John", 140);
 		std::cout << bureaucrat << std::endl << std::endl;
 		bureaucrat.setGrade(1);
 		std::cout << bureaucrat << std::endl << std::endl;

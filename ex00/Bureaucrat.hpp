@@ -9,15 +9,14 @@ class Bureaucrat {
 
 private:
 
-	std::string	name;
-	int			grade;
+	const std::string	name;
+	int					grade;
 
 public:
 
 	std::string	getName() const;
 	int			getGrade() const;
 
-	void		setName(std::string name);
 	void 		setGrade(int grade);
 
 	Bureaucrat();
