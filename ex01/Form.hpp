@@ -19,8 +19,6 @@ public:
 	int			getGradeToSign() const;
 	int			getGradeToExecute() const;
 
-	void		setSigned(bool sign);
-
 	Form();
 	Form(std::string name, int gradeToSign, int gradeToExecute);
 	Form(const Form &form);

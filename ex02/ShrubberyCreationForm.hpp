@@ -20,6 +20,7 @@ public:
 	~ShrubberyCreationForm();
 
 	void	beSigned(const Bureaucrat &bureaucrat);
+	void	execute(const Bureaucrat &bureaucrat) const;
 
 };
 

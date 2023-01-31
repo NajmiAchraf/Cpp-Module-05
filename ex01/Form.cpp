@@ -16,10 +16,6 @@ int Form::getGradeToExecute() const {
 	return this->gradeToExecute;
 }
 
-void Form::setSigned(bool sign) {
-	this->Signed = sign;
-}
-
 Form::Form() : Name("default"), Signed(true), gradeToSign(1), gradeToExecute(1) {
 	std::cout << "Form default constructor" << std::endl;
 }

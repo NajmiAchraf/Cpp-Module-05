@@ -8,7 +8,7 @@ int main () {
 		form.beSigned(bureaucrat);
 		bureaucrat.signForm(form);
 	}
-	catch(const std::exception& e) {
+	catch(const std::exception &e) {
 		std::cerr << e.what() << std::endl;
 	}
 
@@ -18,7 +18,7 @@ int main () {
 		form.beSigned(bureaucrat);
 		bureaucrat.signForm(form);
 	}
-	catch(const std::exception& e) {
+	catch(const std::exception &e) {
 		std::cerr << e.what() << std::endl;
 	}
 	return 0;

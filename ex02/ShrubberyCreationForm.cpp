@@ -22,6 +22,7 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator = (const ShrubberyCreatio
 	std::cout << "ShrubberyCreationForm copy assignment operator" << std::endl;
 	if (this != &form)
 		this->target = form.getTarget();
+	this->Form::operator=(form);
 	return *this;
 }
 
@@ -29,14 +30,11 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {
 	std::cout << "ShrubberyCreationForm destructor" << std::endl;
 }
 
-void ShrubberyCreationForm::beSigned(const Bureaucrat &bureaucrat) {
-	try {
-		if (bureaucrat.getGrade() <= this->gradeToSign)
-			this->Signed = true;
-		else
-			throw Form::GradeTooLowException();
-	}
-	catch (std::exception &e) {
-		std::cout << e.what() << std::endl;
-	}
+void ShrubberyCreationForm::action(Bureaucrat const &bureaucrat) const {
+	this->Form::execute(bureaucrat);
+	std::ofstream file(this->getTarget() + "_shrubbery");
+
+	if (file.is_open() == false)
+		throw std::ofstream::failure("Could not open file " + this->getTarget() + "_shrubbery");
+	// file << TREE_ASCII_ART;
 }
