@@ -20,6 +20,7 @@ NAME_UP	= $(shell echo $(NOM) | tr '[:lower:]' '[:upper:]')
 SRCS = \
 	main.cpp		\
 	Bureaucrat.cpp	\
+	Form.cpp		\
 
 #***************************************#
 #				FOLDERS					#

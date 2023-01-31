@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 std::string	Bureaucrat::getName() const {
 	return this->name;
@@ -30,16 +31,16 @@ Bureaucrat::Bureaucrat(std::string name, int grade){
 	this->grade = grade;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &src) {
+Bureaucrat::Bureaucrat(const Bureaucrat &bureaucrat) {
 	std::cout << "Bureaucrat copy constructor" << std::endl;
-	*this = src;
+	*this = bureaucrat;
 }
 
 Bureaucrat &Bureaucrat::operator = (const Bureaucrat &bureaucrat) {
 	std::cout << "Bureaucrat copy assignment operator" << std::endl;
 	if (this != &bureaucrat) {
-		this->name = bureaucrat.name;
-		this->grade = bureaucrat.grade;
+		this->name = bureaucrat.getName();
+		this->grade = bureaucrat.getGrade();
 	}
 	return *this;
 }
@@ -63,6 +64,13 @@ void Bureaucrat::checkGrade(int grade) {
 		throw Bureaucrat::GradeTooHighException();
 	else if (grade > 150)
 		throw Bureaucrat::GradeTooLowException();
+}
+
+void Bureaucrat::signForm(const Form &form) {
+	if (form.getSigned())
+		std::cout << this->name << " signed " << form.getName() << "." << std::endl;
+	else
+		std::cout << this->name << " couldn’t sign " << form.getName() << " because he's grade is too low." << std::endl;
 }
 
 std::ostream &operator << (std::ostream &out, const Bureaucrat &bureaucrat) {

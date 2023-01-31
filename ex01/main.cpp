@@ -1,24 +1,25 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main () {
-	Bureaucrat	bureaucrat;
+	try {
+		Bureaucrat bureaucrat("bureaucrat1", 10);
+		Form form("form1", 9, 1);
+		form.beSigned(bureaucrat);
+		bureaucrat.signForm(form);
+	}
+	catch(const std::exception& e) {
+		std::cerr << e.what() << std::endl;
+	}
 
-	bureaucrat.setName("John");
-	std::cout << bureaucrat << std::endl << std::endl;
-	bureaucrat.setGrade(1);
-	std::cout << bureaucrat << std::endl << std::endl;
-	bureaucrat.incrementGrade();
-	std::cout << bureaucrat << std::endl << std::endl;
-	bureaucrat.incrementGrade();
-	std::cout << bureaucrat << std::endl << std::endl;
-	bureaucrat.setGrade(94);
-	std::cout << bureaucrat << std::endl << std::endl;
-	bureaucrat.setGrade(0);
-	std::cout << bureaucrat << std::endl << std::endl;
-	bureaucrat.setGrade(151);
-	std::cout << bureaucrat << std::endl << std::endl;
-	bureaucrat.setGrade(-1);
-	std::cout << bureaucrat << std::endl << std::endl;
-	
+	try {
+		Bureaucrat bureaucrat("bureaucrat2", 10);
+		Form form("form2", 10, 1);
+		form.beSigned(bureaucrat);
+		bureaucrat.signForm(form);
+	}
+	catch(const std::exception& e) {
+		std::cerr << e.what() << std::endl;
+	}
 	return 0;
 }

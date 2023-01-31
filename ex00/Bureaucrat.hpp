@@ -15,8 +15,9 @@ private:
 public:
 
 	std::string	getName() const;
-	void		setName(std::string name);
 	int			getGrade() const;
+
+	void		setName(std::string name);
 	void 		setGrade(int grade);
 
 	Bureaucrat();

@@ -30,16 +30,16 @@ Bureaucrat::Bureaucrat(std::string name, int grade){
 	this->grade = grade;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &src) {
+Bureaucrat::Bureaucrat(const Bureaucrat &bureaucrat) {
 	std::cout << "Bureaucrat copy constructor" << std::endl;
-	*this = src;
+	*this = bureaucrat;
 }
 
 Bureaucrat &Bureaucrat::operator = (const Bureaucrat &bureaucrat) {
 	std::cout << "Bureaucrat copy assignment operator" << std::endl;
 	if (this != &bureaucrat) {
-		this->name = bureaucrat.name;
-		this->grade = bureaucrat.grade;
+		this->name = bureaucrat.getName();
+		this->grade = bureaucrat.getGrade();
 	}
 	return *this;
 }
