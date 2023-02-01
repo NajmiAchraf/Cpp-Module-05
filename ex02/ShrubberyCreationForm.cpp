@@ -29,12 +29,3 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator = (const ShrubberyCreatio
 ShrubberyCreationForm::~ShrubberyCreationForm() {
 	std::cout << "ShrubberyCreationForm destructor" << std::endl;
 }
-
-void ShrubberyCreationForm::action(Bureaucrat const &bureaucrat) const {
-	this->Form::execute(bureaucrat);
-	std::ofstream file(this->getTarget() + "_shrubbery");
-
-	if (file.is_open() == false)
-		throw std::ofstream::failure("Could not open file " + this->getTarget() + "_shrubbery");
-	// file << TREE_ASCII_ART;
-}

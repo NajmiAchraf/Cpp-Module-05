@@ -18,9 +18,10 @@ NAME	= $(EXE_DIR)/$(NOM)
 NAME_UP	= $(shell echo $(NOM) | tr '[:lower:]' '[:upper:]')
 
 SRCS = \
-	main.cpp		\
-	Bureaucrat.cpp	\
-	Form.cpp		\
+	main.cpp					\
+	Bureaucrat.cpp				\
+	Form.cpp					\
+	ShrubberyCreationForm.cpp	\
 
 #***************************************#
 #				FOLDERS					#

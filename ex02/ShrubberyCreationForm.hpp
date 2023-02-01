@@ -3,7 +3,7 @@
 
 #include "Form.hpp"
 
-class  ShrubberyCreationForm : public Form {
+class ShrubberyCreationForm : public Form {
 
 private:
 
@@ -20,8 +20,27 @@ public:
 	~ShrubberyCreationForm();
 
 	void	beSigned(const Bureaucrat &bureaucrat);
-	void	execute(const Bureaucrat &bureaucrat) const;
+	void	execute(const Bureaucrat &executor) const;
 
 };
+
+#define ASCII_TREE "\
+          .     .  .      +     .      .          .				\n\
+     .       .      .     #       .           .					\n\
+        .      .         ###            .      .      .			\n\
+      .      .   '#:. .:##'##:. .:#'  .      .					\n\
+          .      . '####'###'####'  .							\n\
+       .     '#:.    .:#'###'#:.    .:#'  .        .       .	\n\
+  .             '#########'#########'        .        .			\n\
+        .    '#:.  '####'###'####'  .:#'   .       .			\n\
+     .     .  '#######''##'##''#######'                  .		\n\
+                .'##'#####'#####'##'           .      .			\n\
+    .   '#:. ...  .:##'###'###'##:.  ... .:#'     .				\n\
+      .     '#######'##'#####'##'#######'      .     .			\n\
+    .    .     '#####''#######''#####'    .      .				\n\
+            .     '      000      '    .     .					\n\
+       .         .   .   000     .        .       .				\n\
+.. .. ..................O000O........................ ...... ...\n\
+"
 
 #endif
