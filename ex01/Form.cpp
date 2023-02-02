@@ -40,15 +40,10 @@ Form::~Form() {
 }
 
 void Form::beSigned(const Bureaucrat &bureaucrat) {
-	try {
-		if (bureaucrat.getGrade() <= this->gradeToSign)
-			this->Signed = true;
-		else
-			throw Form::GradeTooLowException();
-	}
-	catch (std::exception &e) {
-		std::cout << e.what() << std::endl;
-	}
+	if (bureaucrat.getGrade() <= this->gradeToSign)
+		this->Signed = true;
+	else
+		throw Form::GradeTooLowException();
 }
 
 std::ostream &operator << (std::ostream &out, Form &form) {

@@ -31,7 +31,6 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {
 }
 
 void ShrubberyCreationForm::execute(const Bureaucrat &executor) const {
-	std::cout  << this->getGradeToExecute() << "  " << executor.getGrade() << " " << this->getGradeToSign() << " " << this->getSigned() << std::endl;
 	if (this->getGradeToExecute() < executor.getGrade() || this->getGradeToSign() < executor.getGrade() || this->getSigned() == false) {
 		throw Form::GradeTooLowException();
 	}
