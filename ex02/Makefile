@@ -22,6 +22,7 @@ SRCS = \
 	Bureaucrat.cpp				\
 	Form.cpp					\
 	ShrubberyCreationForm.cpp	\
+	RobotomyRequestForm.cpp		\
 
 #***************************************#
 #				FOLDERS					#

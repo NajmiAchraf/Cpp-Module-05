@@ -47,6 +47,15 @@ public:
 		}
 	};
 
+	class IsNotSignedException : public std::exception {
+
+	public:
+
+		virtual const char *what() const throw() {
+			return "is not signed";
+		}
+	};
+
 };
 
 std::ostream &operator << (std::ostream &out, Form &form);
