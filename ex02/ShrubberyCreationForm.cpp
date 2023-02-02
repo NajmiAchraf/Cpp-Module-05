@@ -29,3 +29,17 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator = (const ShrubberyCreatio
 ShrubberyCreationForm::~ShrubberyCreationForm() {
 	std::cout << "ShrubberyCreationForm destructor" << std::endl;
 }
+
+void ShrubberyCreationForm::execute(const Bureaucrat &executor) const {
+	std::cout  << this->getGradeToExecute() << "  " << executor.getGrade() << " " << this->getGradeToSign() << " " << this->getSigned() << std::endl;
+	if (this->getGradeToExecute() < executor.getGrade() || this->getGradeToSign() < executor.getGrade() || this->getSigned() == false) {
+		throw Form::GradeTooLowException();
+	}
+	std::fstream file;
+	file.open(this->target + "_shrubbery", std::fstream::out);
+	if (!file.is_open()) {
+		throw std::fstream::failure("Can't open file" + this->target + "_shrubbery");
+	}
+	file << ASCII_TREE;
+	file.close();
+}

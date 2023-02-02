@@ -57,9 +57,9 @@ void Bureaucrat::checkGrade(int grade) {
 		throw Bureaucrat::GradeTooLowException();
 }
 
-void Bureaucrat::signForm(const Form &form) {
+void Bureaucrat::signForm(Form &form) {
 	try {
-		form.getSigned();
+		form.beSigned(*this);
 		std::cout << this->name << " signed " << form.getName() << "." << std::endl;
 	}
 	catch (const std::exception &e) {
@@ -67,28 +67,6 @@ void Bureaucrat::signForm(const Form &form) {
 	}
 }
 
-void ShrubberyCreationForm::beSigned(const Bureaucrat &bureaucrat) {
-	try {
-		if (bureaucrat.getGrade() <= this->gradeToSign)
-			this->Signed = true;
-		else
-			throw Form::GradeTooLowException();
-	}
-	catch (std::exception &e) {
-		std::cout << e.what() << std::endl;
-	}
-}
-void ShrubberyCreationForm::beSigned(const Bureaucrat &bureaucrat) {
-	try {
-		if (bureaucrat.getGrade() <= this->gradeToSign)
-			this->Signed = true;
-		else
-			throw Form::GradeTooLowException();
-	}
-	catch (std::exception &e) {
-		std::cout << e.what() << std::endl;
-	}
-}
 std::ostream &operator << (std::ostream &out, const Bureaucrat &bureaucrat) {
 	out << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade() << ".";
 	return out;

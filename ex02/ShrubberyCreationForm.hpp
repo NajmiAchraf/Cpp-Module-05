@@ -19,7 +19,6 @@ public:
 	ShrubberyCreationForm &operator = (const ShrubberyCreationForm &form);
 	~ShrubberyCreationForm();
 
-	void	beSigned(const Bureaucrat &bureaucrat);
 	void	execute(const Bureaucrat &executor) const;
 
 };

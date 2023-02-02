@@ -30,7 +30,7 @@ public:
 	void	upGrade();
 	void	downGrade();
 	void	checkGrade(int grade);
-	void	signForm(const Form &form);
+	void	signForm(Form &form);
 
 	class GradeTooHighException : public std::exception {
 

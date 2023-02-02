@@ -5,11 +5,22 @@
 // #include "PresidentialPardonForm.hpp"
 
 int main () {
+	// try {
+	// 	Bureaucrat const bureaucrat1("Bureaucrat1", 1);
+	// 	ShrubberyCreationForm form1("ShrubberyCreationForm");
+	// 	form1.beSigned(bureaucrat1);
+	// 	form1.execute(bureaucrat1);
+
+	// } catch (std::exception &e) {
+	// 	std::cout << e.what() << std::endl;
+	// }
+
 	try {
-		Bureaucrat const bureaucrat("Bureaucrat", 1);
-		ShrubberyCreationForm form("ShrubberyCreationForm");
-		form.beSigned(bureaucrat);
-		form.execute(bureaucrat);
+		ShrubberyCreationForm form2("ShrubberyCreationForm");
+		Bureaucrat bureaucrat2("Bureaucrat2", 1);
+		// bureaucrat2.signForm(form2);
+		bureaucrat2.executeForm(form2);
+
 	} catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
 	}

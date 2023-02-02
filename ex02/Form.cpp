@@ -16,11 +16,11 @@ int Form::getGradeToExecute() const {
 	return this->gradeToExecute;
 }
 
-Form::Form() : Name("default"), Signed(true), gradeToSign(1), gradeToExecute(1) {
+Form::Form() : Name("default"), Signed(false), gradeToSign(1), gradeToExecute(1) {
 	std::cout << "Form default constructor" << std::endl;
 }
 
-Form::Form(std::string name, int newgradeToSign, int newgradeToExecute) : Name(name), Signed(true), gradeToSign(newgradeToSign), gradeToExecute(newgradeToExecute) {
+Form::Form(std::string name, int newgradeToSign, int newgradeToExecute) : Name(name), Signed(false), gradeToSign(newgradeToSign), gradeToExecute(newgradeToExecute) {
 	std::cout << "Form parameterized constructor" << std::endl;
 }
 
