@@ -23,6 +23,7 @@ SRCS = \
 	Form.cpp					\
 	ShrubberyCreationForm.cpp	\
 	RobotomyRequestForm.cpp		\
+	PresidentialPardonForm.cpp
 
 #***************************************#
 #				FOLDERS					#

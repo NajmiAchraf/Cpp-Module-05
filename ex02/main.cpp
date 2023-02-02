@@ -2,7 +2,7 @@
 #include "Form.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
-// #include "PresidentialPardonForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main () {
 	try {
@@ -26,6 +26,19 @@ int main () {
 		bureaucrat2.signForm(form2);
 		bureaucrat2.executeForm(form2);
 		std::cout << form2 << std::endl;
+
+	} catch (std::exception &e) {
+		std::cout << e.what() << std::endl;
+	}
+
+	try {
+		PresidentialPardonForm form3("PresidentialPardonForm");
+		Bureaucrat bureaucrat3("Bureaucrat3", 20); // sign 25, exec 5
+		std::cout << bureaucrat3 << std::endl;
+		std::cout << form3 << std::endl;
+		bureaucrat3.signForm(form3);
+		bureaucrat3.executeForm(form3);
+		std::cout << form3 << std::endl;
 
 	} catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
